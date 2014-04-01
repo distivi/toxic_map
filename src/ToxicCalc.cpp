@@ -40,7 +40,7 @@ void ToxicCalc::define_deep(string _svsp_type,string _temp, string _chemicals, s
     qDebug() << "Define_deep\n";
 
     QSqlDatabase dbase = QSqlDatabase::addDatabase("QSQLITE");
-    dbase.setDatabaseName("my_db.sqlite");
+    dbase.setDatabaseName("../my_db.sqlite");
     if (!dbase.open()) {
         qDebug() << "Что-то не так с соединением!";
     }
