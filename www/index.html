@@ -44,7 +44,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" data-toggle="modal" data-target="#myModal">Link <b class="caret"></b></a></li>
+					<li><a href="#" data-toggle="modal" data-target="#myModal">Set Toxic Attributes <b class="caret"></b></a></li>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
@@ -74,26 +74,13 @@
 					</div><!-- /input-group -->
 
 					<div class="input-group margin-hor-5">
-						<input type="text" class="form-control" readonly toxic-input="temp[Инверсия]"> 
+						<input type="text" class="form-control" readonly toxic-input="temperature"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">temp[Инверсия] <span class="caret"></span></button>
-							<ul class="dropdown-menu pull-right">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">temperature <span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right" dinamic-toxic-dropdown="temperature">
 								<li><a toxic-attr>-20</a></li>
 								<li><a toxic-attr>0</a></li>
 								<li><a toxic-attr>+20</a></li>
-							</ul>
-						</div><!-- /btn-group -->
-					</div><!-- /input-group -->
-
-					<div class="input-group margin-hor-5">
-						<input type="text" class="form-control" readonly toxic-input="temp[Изотермия]"> 
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">temp[Изотермия] <span class="caret"></span></button>
-							<ul class="dropdown-menu pull-right">
-								<li><a toxic-attr>-20</a></li>
-								<li><a toxic-attr>0</a></li>
-								<li><a toxic-attr>+20</a></li>
-								<li><a toxic-attr>+40</a></li>
 							</ul>
 						</div><!-- /btn-group -->
 					</div><!-- /input-group -->
@@ -101,7 +88,7 @@
 					<div class="input-group margin-hor-5">
 						<input type="text" class="form-control" readonly toxic-input="chemicals"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">chemicals<span class="caret"></span></button>
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">chemicals <span class="caret"></span></button>
 							<ul class="dropdown-menu pull-right">
 								<li><a toxic-attr>Хлор</a></li>
 								<li><a toxic-attr>Амиак</a></li>
@@ -112,7 +99,7 @@
 					<div class="input-group margin-hor-5">
 						<input type="text" class="form-control" readonly toxic-input="nhr_value"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">nhr_value<span class="caret"></span></button>
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">nhr_value <span class="caret"></span></button>
 							<ul class="dropdown-menu pull-right">
 								<li><a toxic-attr>0.5</a></li>
 								<li><a toxic-attr>1</a></li>
@@ -131,28 +118,14 @@
 					</div><!-- /input-group -->
 
 					<div class="input-group margin-hor-5">
-						<input type="text" class="form-control" readonly toxic-input="wind[Инверсия]"> 
+						<input type="text" class="form-control" readonly toxic-input="wind"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">wind[Инверсия]<span class="caret"></span></button>
-							<ul class="dropdown-menu pull-right">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">wind <span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right" dinamic-toxic-dropdown="wind">
 								<li><a toxic-attr>1</a></li>
 								<li><a toxic-attr>2</a></li>
 								<li><a toxic-attr>3</a></li>
 								<li><a toxic-attr>4</a></li>
-							</ul>
-						</div><!-- /btn-group -->
-					</div><!-- /input-group -->
-
-					<div class="input-group margin-hor-5">
-						<input type="text" class="form-control" readonly toxic-input="wind[Изотермия]"> 
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">wind[Изотермия]<span class="caret"></span></button>
-							<ul class="dropdown-menu pull-right">
-								<li><a toxic-attr>1</a></li>
-								<li><a toxic-attr>2</a></li>
-								<li><a toxic-attr>3</a></li>
-								<li><a toxic-attr>4</a></li>
-								<li><a toxic-attr>5</a></li>
 							</ul>
 						</div><!-- /btn-group -->
 					</div><!-- /input-group -->
