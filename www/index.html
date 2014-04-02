@@ -3,69 +3,170 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
-	<div class="wrapper">
-		<header>
-			<ul id="nav-bar">
-				<li>
-					<div class="nav-item">File</div>
-					<div class="nav-item">Open</div>
-					<div class="nav-item">New</div>
-					<div class="nav-item">Save</div>
-					<div class="nav-item">Save As</div>
-					<div class="nav-item">Close</div>
-				</li>
-				<li>
-					<div class="nav-item">Toxic object</div>
-					<div class="nav-item">Add</div>
-					<div class="nav-item">Find</div>
-				</li>
-				<li>
-					<div class="nav-item">About</div>
-				</li>
-			</ul>
+<body cz-shortcut-listen="true">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Toxic Map</a>
+			</div>
 
-			<div id="side-bar-handler">Tools</div>
-		</header>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">File <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+						<li><a href="#">New</a></li>
+						<li><a href="#">Open</a></li>
+						<li><a href="#">Save</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Exit</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Toxic object<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+						<li><a href="#">Add</a></li>
+						<li><a href="#">Find</a></li>
+						</ul>
+					</li>
+					<li><a href="#">About</a></li>
+				</ul>
 
-		<div class="container">
-			<div id="map">map</div>
-			<div id="side-bar">
-				<input type="radio" name="tabs" id="nav-tab-1" checked>
-				<label for="nav-tab-1">Weather</label>
-				<input type="radio" name="tabs" id="nav-tab-2">
-				<label for="nav-tab-2">Toxic objects</label>
-				<input type="radio" name="tabs" id="nav-tab-3">
-				<label for="nav-tab-3">Map navigation</label>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" data-toggle="modal" data-target="#myModal">Link <b class="caret"></b></a></li>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<!-- <div class="container"> -->
+		<div id="map"></div>
+	<!-- </div> -->
 
-				<div class="tabs">
-					<div>
-						<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, laborum.</h2>
-					</div>
-					<div>
-						<h2>Cupiditate, minus necessitatibus nam eos facere iure porro ipsam adipisci.</h2>
-					</div>
-					<div>
-						<h2>Dolores velit illum quia quo repellendus. Odio, itaque voluptas maxime?</h2>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Input Values</h4>
+				</div>
+				<div class="modal-body">
 
-						<h2>Dolores velit illum quia quo repellendus. Odio, itaque voluptas maxime?</h2>
+					<div class="input-group margin-hor-5">
+						<input type="text" class="form-control" readonly toxic-input="svsp_type"> 
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">svsp_type <span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right">
+								<li><a toxic-attr>Изотермия</a></li>
+								<li><a toxic-attr>Инверсия</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+					</div><!-- /input-group -->
 
-						<h2>Dolores velit illum quia quo repellendus. Odio, itaque voluptas maxime?</h2>
+					<div class="input-group margin-hor-5">
+						<input type="text" class="form-control" readonly toxic-input="temp[Инверсия]"> 
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">temp[Инверсия] <span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right">
+								<li><a toxic-attr>-20</a></li>
+								<li><a toxic-attr>0</a></li>
+								<li><a toxic-attr>+20</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+					</div><!-- /input-group -->
 
-						<h2>Dolores velit illum quia quo repellendus. Odio, itaque voluptas maxime?</h2>
+					<div class="input-group margin-hor-5">
+						<input type="text" class="form-control" readonly toxic-input="temp[Изотермия]"> 
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">temp[Изотермия] <span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right">
+								<li><a toxic-attr>-20</a></li>
+								<li><a toxic-attr>0</a></li>
+								<li><a toxic-attr>+20</a></li>
+								<li><a toxic-attr>+40</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+					</div><!-- /input-group -->
 
-						<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, libero, laudantium, et quos atque eaque ea quae voluptas vel ex natus aut velit deserunt repellendus adipisci. Quaerat, voluptate, itaque, amet alias distinctio laboriosam eveniet eligendi culpa obcaecati nihil molestias cum ducimus impedit doloremque odio deleniti ipsum! Dignissimos, doloribus, eligendi quaerat voluptate illo delectus eum soluta odio molestias consequuntur veritatis sequi blanditiis culpa praesentium aut maiores assumenda unde nihil! Quisquam, quaerat, architecto, quos tenetur optio cum dolorum nulla neque officiis consequatur laudantium ipsa numquam adipisci provident eos obcaecati beatae animi cumque aspernatur nostrum quidem dolorem iste laborum. Vel animi ullam voluptatum.</h3>
+					<div class="input-group margin-hor-5">
+						<input type="text" class="form-control" readonly toxic-input="chemicals"> 
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">chemicals<span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right">
+								<li><a toxic-attr>Хлор</a></li>
+								<li><a toxic-attr>Амиак</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+					</div><!-- /input-group -->
 
-						<h1>the end test</h1>
-					</div>
+					<div class="input-group margin-hor-5">
+						<input type="text" class="form-control" readonly toxic-input="nhr_value"> 
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">nhr_value<span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right">
+								<li><a toxic-attr>0.5</a></li>
+								<li><a toxic-attr>1</a></li>
+								<li><a toxic-attr>2</a></li>
+								<li><a toxic-attr>3</a></li>
+								<li><a toxic-attr>5</a></li>
+								<li><a toxic-attr>10</a></li>
+								<li><a toxic-attr>20</a></li>
+								<li><a toxic-attr>30</a></li>
+								<li><a toxic-attr>50</a></li>
+								<li><a toxic-attr>70</a></li>
+								<li><a toxic-attr>100</a></li>
+								<li><a toxic-attr>300</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+					</div><!-- /input-group -->
+
+					<div class="input-group margin-hor-5">
+						<input type="text" class="form-control" readonly toxic-input="wind[Инверсия]"> 
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">wind[Инверсия]<span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right">
+								<li><a toxic-attr>1</a></li>
+								<li><a toxic-attr>2</a></li>
+								<li><a toxic-attr>3</a></li>
+								<li><a toxic-attr>4</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+					</div><!-- /input-group -->
+
+					<div class="input-group margin-hor-5">
+						<input type="text" class="form-control" readonly toxic-input="wind[Изотермия]"> 
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">wind[Изотермия]<span class="caret"></span></button>
+							<ul class="dropdown-menu pull-right">
+								<li><a toxic-attr>1</a></li>
+								<li><a toxic-attr>2</a></li>
+								<li><a toxic-attr>3</a></li>
+								<li><a toxic-attr>4</a></li>
+								<li><a toxic-attr>5</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+					</div><!-- /input-group -->
+
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="calculate-button">Test Calculations</button>
 				</div>
 			</div>
 		</div>
-
-		<footer></footer>
 	</div>
-	<script src="scripts/main.js"></script>
+
+	<script src="scripts/main.js"></script> 
+	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

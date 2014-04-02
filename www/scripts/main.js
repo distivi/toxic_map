@@ -1,24 +1,22 @@
 $(document).ready(function(){
-	calculateSideBarWidth();
 
-	$("#side-bar-handler").click(function(){
-		$("#side-bar").toggle(function(){
-			return false;
-		},function(){
-			return false;
+	$('*[toxic-attr]').click(function(e) {
+		var target = $(e.target);
+		target.parents(".input-group").children().first().val(target.text());
+	});
+
+
+	$("#calculate-button").click(function(clickEvent) {
+		var results = {};
+		$("*[toxic-input]").each(function(i,element){
+			var value = $(element).val()
+			var key = $(element).attr("toxic-input");
+			results[key] = value;
 		});
+
+		// TODO: calculate something in C++
+		alert(results.toString());
 	});
 });
 
-
-var calculateSideBarWidth = function(){
-	var commonWidth = 0;
-	// 326
-	var sideBar = $("#side-bar > label").map(function(){
-		console.log(parseFloat($(this).css("width")));
-		commonWidth += parseFloat($(this).css("width")) + 21;
-	});
-	console.log(commonWidth);
-	$("#side-bar").css("width",commonWidth);
-}
 
