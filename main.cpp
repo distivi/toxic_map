@@ -1,14 +1,16 @@
 #include <QApplication>
 #include "html5applicationviewer.h"
+#include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-
-    Html5ApplicationViewer viewer;
-    viewer.setOrientation(Html5ApplicationViewer::ScreenOrientationAuto);
-    viewer.showExpanded();
-    viewer.loadFile(QLatin1String("www/index.html"));
+    MainWindow mwindow;
+    mwindow.show();
+    //Html5ApplicationViewer viewer;
+    //viewer.setOrientation(Html5ApplicationViewer::ScreenOrientationAuto);
+    //viewer.showExpanded();
+    //viewer.loadFile(QLatin1String("www/index.html"));
 
     return app.exec();
 }
