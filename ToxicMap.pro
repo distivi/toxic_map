@@ -1,4 +1,4 @@
-greaterThan(QT_MAJOR_VERSION, 4):QT += widgets webkitwidgets
+greaterThan(QT_MAJOR_VERSION, 4):QT += widgets webkitwidgets sql core
 
 # Add more folders to ship with the application, here
 folder_01.source = www
@@ -14,8 +14,16 @@ DEPLOYMENTFOLDERS = folder_01
 # MOBILITY +=
 
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    src/ToxicCalc.cpp \
+    mainwindow.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(html5applicationviewer/html5applicationviewer.pri)
 qtcAddDeployment()
+
+HEADERS += \
+    src/ToxicCalc.hpp
+
+FORMS += \
+    mainwindow.ui

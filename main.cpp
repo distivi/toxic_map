@@ -1,5 +1,4 @@
 #include <QApplication>
-#include "html5applicationviewer.h"
 #include "mainwindow.h"
 
 int main(int argc, char *argv[])
