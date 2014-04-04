@@ -97,8 +97,21 @@ function initialize() {
 
   google.maps.event.addListener(map, 'click', function(event) {
     console.log("click");
-     placeToxicObject(event.latLng,5,3);
+    
+    var width = mainWindow.calculate(globalToxicParams["svsp_type"],
+      globalToxicParams["temperature"],
+      globalToxicParams["chemicals"],
+      globalToxicParams["nhr_value"],
+      globalToxicParams["wind"],
+      "2");
+    // console.log("test width = " + width);
+     placeToxicObject(event.latLng,width,width);
   });
+
+  
+  function showModal(argument) {
+    console.log("show modal");
+  }
 
   
 }

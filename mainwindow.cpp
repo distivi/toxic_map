@@ -34,7 +34,7 @@ void MainWindow::showTestPromt()
 
 float MainWindow::calculate(QString _svsp_type, QString _temp, QString _chemicals, QString _nhr_value, QString _wind, QString _obval)
 {
-    QMessageBox::information(this, QString("From Web"),QString("Calculation data goted"));
+//    QMessageBox::information(this, QString("From Web"),QString("Calculation data goted"));
     toxCalc->define_deep(_svsp_type.toStdString(),_temp.toStdString(),_chemicals.toStdString(),_nhr_value.toStdString(),_wind.toStdString(),_obval.toStdString());
     return toxCalc->getWidth();
     return .5f;

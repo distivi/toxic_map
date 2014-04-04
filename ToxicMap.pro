@@ -1,5 +1,4 @@
-greaterThan(QT_MAJOR_VERSION, 4):QT += widgets webkitwidgets sql core
-
+greaterThan(QT_MAJOR_VERSION, 4):QT += widgets webkitwidgets sql core gui
 # Add more folders to ship with the application, here
 folder_01.source = www
 folder_01.target = .
@@ -23,7 +22,11 @@ include(html5applicationviewer/html5applicationviewer.pri)
 qtcAddDeployment()
 
 HEADERS += \
-    src/ToxicCalc.hpp
+    src/ToxicCalc.hpp \
+    mainwindow.h
 
 FORMS += \
     mainwindow.ui
+
+OTHER_FILES += \
+    db/my_db.sqlite

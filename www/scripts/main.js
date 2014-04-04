@@ -8,6 +8,14 @@ $(document).ready(function(){
 		var inputField = target.parents(".input-group").children().first();
 		inputField.val(target.text());
 
+		if (target.attr("toxic-attr")) {
+			globalToxicParams[inputField.attr("toxic-input")] = target.attr("toxic-attr");
+		} else {
+			globalToxicParams[inputField.attr("toxic-input")] = target.text();
+		}
+
+		console.log(globalToxicParams[inputField.attr("toxic-input")]);
+
 		if (inputField.attr("toxic-input") == "svsp_type") {
 			changeToxicAttributesForIsothermal(inputField.val() == "Изотермия");
 		};
@@ -28,8 +36,12 @@ $(document).ready(function(){
 		});
 
 		if (isAllFieled) {
-			// TODO: calculate something in C++
 			alert(results.toString());
+			globalToxicParams = results;
+
+			for (var key in globalToxicParams) {
+				console.log(" k = " + key + " v = " + globalToxicParams[key]);
+			}
 		} else {
 			alert("Please fill all fields");
 		};

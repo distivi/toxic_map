@@ -14,6 +14,15 @@
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body cz-shortcut-listen="true">
+	<script>
+		var globalToxicParams = {"svsp_type" : "inversion",
+								"temperature" : "-20",
+								"chemicals" : "chlorine",
+								"nhr_value" : "1",
+								"wind" : "1"};
+	</script>
+
+
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -73,10 +82,10 @@
 					<div class="input-group margin-hor-5">
 						<input type="text" class="form-control" readonly toxic-input="svsp_type"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">svsp_type <span class="caret"></span></button>
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">Тип СВСП <span class="caret"></span></button>
 							<ul class="dropdown-menu pull-right">
-								<li><a toxic-attr>Изотермия</a></li>
-								<li><a toxic-attr>Инверсия</a></li>
+								<li><a toxic-attr="izoterm">Изотермия</a></li>
+								<li><a toxic-attr="inversion">Инверсия</a></li>
 							</ul>
 						</div><!-- /btn-group -->
 					</div><!-- /input-group -->
@@ -84,7 +93,7 @@
 					<div class="input-group margin-hor-5">
 						<input type="text" class="form-control" readonly toxic-input="temperature"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">temperature <span class="caret"></span></button>
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">Температура (С) <span class="caret"></span></button>
 							<ul class="dropdown-menu pull-right" dinamic-toxic-dropdown="temperature">
 								<li><a toxic-attr>-20</a></li>
 								<li><a toxic-attr>0</a></li>
@@ -96,10 +105,10 @@
 					<div class="input-group margin-hor-5">
 						<input type="text" class="form-control" readonly toxic-input="chemicals"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">chemicals <span class="caret"></span></button>
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">Тип вещества <span class="caret"></span></button>
 							<ul class="dropdown-menu pull-right">
-								<li><a toxic-attr>Хлор</a></li>
-								<li><a toxic-attr>Амиак</a></li>
+								<li><a toxic-attr="chlorine">Хлор</a></li>
+								<li><a toxic-attr="amonia">Амиак</a></li>
 							</ul>
 						</div><!-- /btn-group -->
 					</div><!-- /input-group -->
@@ -107,7 +116,7 @@
 					<div class="input-group margin-hor-5">
 						<input type="text" class="form-control" readonly toxic-input="nhr_value"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">nhr_value <span class="caret"></span></button>
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">Обьем ОХВ <span class="caret"></span></button>
 							<ul class="dropdown-menu pull-right">
 								<li><a toxic-attr>0.5</a></li>
 								<li><a toxic-attr>1</a></li>
@@ -128,7 +137,7 @@
 					<div class="input-group margin-hor-5">
 						<input type="text" class="form-control" readonly toxic-input="wind"> 
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">wind <span class="caret"></span></button>
+							<button type="button" class="btn btn-default dropdown-toggle btn-min-width-150" data-toggle="dropdown">Ветер (м/с) <span class="caret"></span></button>
 							<ul class="dropdown-menu pull-right" dinamic-toxic-dropdown="wind">
 								<li><a toxic-attr>1</a></li>
 								<li><a toxic-attr>2</a></li>
@@ -141,11 +150,12 @@
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" id="calculate-button">Test Calculations</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Test Calculations</button>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<script src="scripts/main.js"></script> 
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
