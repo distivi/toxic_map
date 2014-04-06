@@ -43,7 +43,7 @@ function initialize() {
     zoom: 11,
     // center: new google.maps.LatLng(62.323907, -150.109291),
     center: new google.maps.LatLng(46.972370, 32.016687),
-    mapTypeId: google.maps.MapTypeId.SATELLITE
+    mapTypeId: google.maps.MapTypeId.MAP
   };
 
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
