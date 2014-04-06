@@ -7,6 +7,7 @@
 #include <string>
 #include <fstream>
 #include <exception>
+#include <QApplication>
 
 #include <map>
 #include <math.h>

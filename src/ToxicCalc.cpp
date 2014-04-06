@@ -9,7 +9,6 @@ ToxicCalc::ToxicCalc()
     width_coef_map["izoterm"]=0.75;
 
     load_data();
-
 }
 
 bool ToxicCalc::openDB()
@@ -31,7 +30,7 @@ void ToxicCalc::load_data()
     amonia_map[3] = 2.35;
     
     this->obval_depth_decrease_coef_map["chlorine"] = chlorine_map;
-    this->obval_depth_decrease_coef_map["amonia"] = amonia_map;
+    this->obval_depth_decrease_coef_map["ammonia"] = amonia_map;
 }
 
 void ToxicCalc::define_deep(string _svsp_type,string _temp, string _chemicals, string _nhr_value, string _wind, string _obval)
@@ -40,9 +39,10 @@ void ToxicCalc::define_deep(string _svsp_type,string _temp, string _chemicals, s
     qDebug() << "Define_deep\n";
 
     QSqlDatabase dbase = QSqlDatabase::addDatabase("QSQLITE");
-    dbase.setDatabaseName("/home/stas/Programming/QT/ToxicMap/db/my_db.sqlite");
+    dbase.setDatabaseName(QApplication::applicationDirPath()+"/db/my_db.sqlite");
+
     if (!dbase.open()) {
-        qDebug() << "Что-то не так с соединением!";
+        qDebug() << "Something wrong with DB connection!";
     }
 
     bool b;
@@ -61,7 +61,7 @@ void ToxicCalc::define_deep(string _svsp_type,string _temp, string _chemicals, s
     b = sql_query.exec(executed_str);
     if (!b) 
     {
-        qDebug() << "Something wrong\n";
+        qDebug() << "ToxicCalc::define_deep::Something wrong. Query not executed.\n";
     }
 
     QString depth;
